@@ -10,6 +10,8 @@
 #include "led.h"
 #include "hard_def.h"
 
+static int hard_error;
+
 void
 verify_changes(void)
 {
@@ -29,6 +31,24 @@ init_hardware( void )
 {
     for( int i = 0; hinit[i] != NULL; ++i )
         (*hinit[i])();
+}
+
+void
+set_hard_error(void)
+{
+    hard_error++;
+}
+
+void
+reset_hard_error(void)
+{
+    hard_error = 0;
+}
+
+int
+in_hard_error(void)
+{
+    return hard_error != 0;
 }
 
 

@@ -10,6 +10,7 @@
 
 #include "dhtsensor.h"
 #include "mqtt.h"
+#include "hard.h"
 
 // Objects
 
@@ -35,10 +36,12 @@ read_dhtsensor(void)
     t = dht.readTemperature();
 
     if (isnan(h) || isnan(t)) //    verificar si cualquiera de las lecturas fracasaron
+    {
         Serial.println("Error reading dht sensor");
+        set_hard_error();
+    }
     else
     {
-//        Serial.printf( "DHT%d -> Humedad: %5.1f %% Temperatura: %5.1f °C\n\r", DHTTYPE, h, t );
         sprintf(buff,"%5.1f",t);
         do_publish("temp",buff);
 
@@ -46,5 +49,7 @@ read_dhtsensor(void)
         do_publish("hum",buff);
     }
 }
+
+
 
 

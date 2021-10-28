@@ -10,3 +10,6 @@ Also includes hardware for detecting connection
 to mqtt server (using builtin led) and autonumbering
 for up to 4 equal boards
 
+Added blinking builtin led when a publication is made
+
+

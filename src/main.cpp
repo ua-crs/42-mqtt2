@@ -12,6 +12,17 @@
 static unsigned long previous_millis;
 
 void
+visualize_changes(void)
+{
+    if( !in_hard_error() )
+    {
+        click_base_led();
+        delay(100);
+        click_base_led();
+    }
+ }
+
+void
 setup(void)
 {
     Serial.begin(SERIAL_BAUD);
@@ -34,6 +45,7 @@ loop(void)
     {
         previous_millis = current_millis;
         verify_changes();
-    }
+        visualize_changes();
+   }
     mqtt_comms();
 }

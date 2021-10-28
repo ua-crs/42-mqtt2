@@ -49,11 +49,19 @@ dim_base_led(void)
     set_led(LED_BUILT,"0");
 }
 
+void
+click_base_led(void)
+{
+    set_led(LED_BUILT,NULL);
+}
+
 int
 get_board_number(void)
 {
     return board_number;
 }
+
+
 
 
 
