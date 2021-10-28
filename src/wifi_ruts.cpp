@@ -39,26 +39,25 @@ wifi_connect(void)
 void
 connect_wifi( const char *ssid, const char *pass )
 {
+    Serial.printf("\n\rConnecting to %s\n\r", ssid);
+#if 0
     Serial.println();
     Serial.print("Connecting to ");
     Serial.println(ssid);
+#endif
 
     wifi_connect();
     WiFi.begin(ssid, pass);
 
-//    while(1);
     while( WiFi.status() != WL_CONNECTED )
     {
         Serial.print(".");
         delay(500);
     }
 
-    Serial.println();
-    Serial.println("______________");
-    Serial.print( "Baud Rate = " );
-    Serial.println( SERIAL_BAUD );
-    Serial.print( "Conectado a ");
-    Serial.println( MY_SSID );
+    Serial.printf("\n\r______________\n\r");
+    Serial.printf("Baud Rate = %u\n\r", SERIAL_BAUD );
+    Serial.printf("Connected to %s\n\r", MY_SSID);
     Serial.print( "MAC = ");
     Serial.println( WiFi.macAddress() );
     Serial.print( "local IP = " );

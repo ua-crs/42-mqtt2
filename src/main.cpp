@@ -9,6 +9,8 @@
 #include "mqtt.h"
 #include "base_hard.h"
 
+static unsigned long previous_millis;
+
 void
 setup(void)
 {
@@ -26,7 +28,6 @@ void
 loop(void)
 {   
     unsigned long current_millis;
-    unsigned long previous_millis = millis();
 
     current_millis = millis();
     if( current_millis - previous_millis > INTERVAL )

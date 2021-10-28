@@ -5,12 +5,14 @@
 
 #include "mqtt.h"
 #include "led.h"
+#include "dhtsensor.h"
 
 
 // Table of routines to verify hardware changes
 
 void (* const changes[])(void) =
 {
+    read_dhtsensor,
     NULL
 };
 
@@ -27,6 +29,7 @@ const subsc_t topics[] =
 void (* const hinit[])(void)
 {
     init_all_leds,
+    init_dhtsensor,
     NULL
 };
 
