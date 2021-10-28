@@ -4,7 +4,6 @@
  */
 
 #ifndef __MQTT_H__
-
 #define __MQTT_H__
 
 //  subsc_t: memory structure for subscribed topics
@@ -26,6 +25,8 @@ void do_subscribe( const char *ptopic );
 
 //  mqtt_comms: manage communications with MQTT server
 void mqtt_comms(void);
+
+//  do_publish: publish message as MAIN_TOPIC/SUB_TOPIC+BoardNumber/*ptopic
 
 void do_publish( const char *ptopic, const char *message );
 

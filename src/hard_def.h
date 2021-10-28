@@ -18,7 +18,7 @@ void (* const changes[])(void) =
 
 const subsc_t topics[] =
 {
-    { "austral/toggle", change_action_led }, 
+    { "austral/+/toggle", change_action_led }, 
     NULL
 };
 

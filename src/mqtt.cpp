@@ -26,6 +26,8 @@
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+static char client_name[20];
+
 /*
  *  Private functions
  */
@@ -78,6 +80,8 @@ do_connect(void)
 void
 init_mqtt(void)
 {
+    sprintf(client_name,"%s%u",MQTT_NAME,get_board_number());
+    Serial.printf("client name = %s\n\r", client_name);
     client.setServer(mqttServer, mqttPort);
     client.setCallback(callback);
     do_connect();
@@ -102,12 +106,14 @@ mqtt_comms(void)
     client.loop();
 }
 
+//  do_publish: publish message as MAIN_TOPIC/SUB_TOPIC+BoardNumber/*ptopic
+
 void
 do_publish( const char *ptopic, const char *message )
 {
     char topic[50];
 
-    sprintf( topic, "%s/%s", MAIN_TOPIC, ptopic );
+    sprintf( topic, "%s/%s%u/%s", MAIN_TOPIC, SUB_TOPIC, get_board_number(), ptopic );
     client.publish( topic, message );
     Serial.printf( "%s: %s %s\n\r", __FUNCTION__, topic, message );
 }

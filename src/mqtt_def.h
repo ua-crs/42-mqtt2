@@ -19,5 +19,4 @@ const char *mqttPassword =  SERVER_PASS;
 
 #endif
 
-const char* client_name = MQTT_NAME;
 
