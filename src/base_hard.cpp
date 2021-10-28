@@ -34,6 +34,7 @@ init_base_hard(void)
     init_led(LED_BUILT);
     dim_base_led();
     init_board_number();
+    Serial.printf("Board number = %u\n\r", get_board_number());
 }
 
 void
