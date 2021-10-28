@@ -20,6 +20,12 @@ setup(void)
     init_base_hard();
     init_hardware();
     init_mqtt();
+#if 0
+    Serial.printf("Board number = %u\n\r", get_board_number());
+    Serial.printf("bit %u = %u, bit %u = %u\n\r",
+        BNUM_B0, digitalRead(BNUM_B0),
+        BNUM_B1, digitalRead(BNUM_B1) );
+#endif
 }
 
 void
