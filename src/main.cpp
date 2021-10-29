@@ -8,8 +8,10 @@
 #include "hard.h"   //  Hardware dependent code
 #include "mqtt.h"
 #include "base_hard.h"
+#include "interval.h"
 
 static unsigned long previous_millis;
+
 
 void
 visualize_changes(void)
@@ -41,7 +43,7 @@ loop(void)
     unsigned long current_millis;
 
     current_millis = millis();
-    if( current_millis - previous_millis > INTERVAL )
+    if( current_millis - previous_millis > interval )
     {
         previous_millis = current_millis;
         verify_changes();
