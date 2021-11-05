@@ -1,0 +1,328 @@
+[
+    {
+        "id": "d473251d13a91f2a",
+        "type": "tab",
+        "label": "mqtt",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e5b87c48.1a478",
+        "type": "mqtt in",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "eam/sensor",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": false,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "383f2d9b.c7c0d2"
+            ]
+        ]
+    },
+    {
+        "id": "383f2d9b.c7c0d2",
+        "type": "debug",
+        "z": "d473251d13a91f2a",
+        "name": "sensor print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f191749f1c2cad7e",
+        "type": "inject",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "eam/sensor",
+        "payload": "12",
+        "payloadType": "num",
+        "x": 200,
+        "y": 400,
+        "wires": [
+            [
+                "f831bb5c0d2e5bef"
+            ]
+        ]
+    },
+    {
+        "id": "f831bb5c0d2e5bef",
+        "type": "mqtt out",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 390,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d5e6c9dd8d230f3b",
+        "type": "inject",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "eam/sensor",
+        "payload": "15",
+        "payloadType": "num",
+        "x": 200,
+        "y": 500,
+        "wires": [
+            [
+                "3f34254b664d597a"
+            ]
+        ]
+    },
+    {
+        "id": "3f34254b664d597a",
+        "type": "mqtt out",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 390,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "1628941fe08ef1fe",
+        "type": "inject",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "eam/time",
+        "payloadType": "date",
+        "x": 210,
+        "y": 600,
+        "wires": [
+            [
+                "b7f9715de05693ec"
+            ]
+        ]
+    },
+    {
+        "id": "b7f9715de05693ec",
+        "type": "mqtt out",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 390,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "be6284838d036205",
+        "type": "mqtt in",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "eam/time",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": false,
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "778fb4bc3bc38a2a"
+            ]
+        ]
+    },
+    {
+        "id": "778fb4bc3bc38a2a",
+        "type": "debug",
+        "z": "d473251d13a91f2a",
+        "name": "time print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "92d66b1269331d7e",
+        "type": "mqtt in",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "eam/#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": false,
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "ba25ed266436f142"
+            ]
+        ]
+    },
+    {
+        "id": "ba25ed266436f142",
+        "type": "debug",
+        "z": "d473251d13a91f2a",
+        "name": "all print",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "912ebab8596b040d",
+        "type": "inject",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "eam/other",
+        "payload": "other topic",
+        "payloadType": "str",
+        "x": 200,
+        "y": 680,
+        "wires": [
+            [
+                "c8a3b0f680855052"
+            ]
+        ]
+    },
+    {
+        "id": "c8a3b0f680855052",
+        "type": "mqtt out",
+        "z": "d473251d13a91f2a",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 390,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "6ec4dcef.913b24",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "15",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]

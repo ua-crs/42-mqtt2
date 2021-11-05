@@ -1,0 +1,449 @@
+[
+    {
+        "id": "08d4dec756874d40",
+        "type": "tab",
+        "label": "esp32-dash1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7f9f39d5e4e8578e",
+        "type": "inject",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "austral/dash1/toggle",
+        "payloadType": "date",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "9610649c24f85ae5",
+                "e91f6857572f2a26"
+            ]
+        ]
+    },
+    {
+        "id": "9610649c24f85ae5",
+        "type": "mqtt out",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 480,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e91f6857572f2a26",
+        "type": "debug",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "568a8c5b22f7c49a",
+        "type": "mqtt out",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/dash1/toggle",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 540,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5f21cf4ebdfb0658",
+        "type": "ui_button",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "group": "3341a2231ad3625d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "toggle dash1",
+        "tooltip": "Toggle led in devices",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "From dash1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 380,
+        "wires": [
+            [
+                "568a8c5b22f7c49a"
+            ]
+        ]
+    },
+    {
+        "id": "e1ce59ea65523d13",
+        "type": "mqtt in",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/cl1/temp",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 480,
+        "wires": [
+            [
+                "2c9c4ce36ae56007"
+            ]
+        ]
+    },
+    {
+        "id": "2c9c4ce36ae56007",
+        "type": "ui_gauge",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "group": "3341a2231ad3625d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#007db3",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "18",
+        "seg2": "25",
+        "className": "",
+        "x": 530,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "3c9f10d81287b1a7",
+        "type": "mqtt in",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/cl1/hum",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 560,
+        "wires": [
+            [
+                "e332d20fc84c4c19"
+            ]
+        ]
+    },
+    {
+        "id": "e332d20fc84c4c19",
+        "type": "ui_gauge",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "group": "3341a2231ad3625d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#007db3",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 520,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "20ce3022ca90dbfb",
+        "type": "mqtt in",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/cl2/temp",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 660,
+        "wires": [
+            [
+                "e28efd4d80d881c2"
+            ]
+        ]
+    },
+    {
+        "id": "e28efd4d80d881c2",
+        "type": "ui_gauge",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "group": "a83c3b0ce58eb3cf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#007db3",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "18",
+        "seg2": "25",
+        "className": "",
+        "x": 530,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "43449b045f9b59e1",
+        "type": "mqtt in",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/cl2/hum",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "6ec4dcef.913b24",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 740,
+        "wires": [
+            [
+                "2deabd3d4097a7b8"
+            ]
+        ]
+    },
+    {
+        "id": "2deabd3d4097a7b8",
+        "type": "ui_gauge",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "group": "a83c3b0ce58eb3cf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#007db3",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "60",
+        "className": "",
+        "x": 520,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "2bc1bdea0c074e99",
+        "type": "ui_dropdown",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "label": "interval",
+        "tooltip": "Select interval time (in seconds) for taking measurements",
+        "place": "Select option",
+        "group": "a83c3b0ce58eb3cf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "",
+                "value": "5",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "20",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "60",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "300",
+                "type": "str"
+            },
+            {
+                "label": "",
+                "value": "600",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 220,
+        "y": 820,
+        "wires": [
+            [
+                "fab6a17df2907ad0",
+                "0b7fddf9c5b0fe59"
+            ]
+        ]
+    },
+    {
+        "id": "fab6a17df2907ad0",
+        "type": "debug",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "0b7fddf9c5b0fe59",
+        "type": "mqtt out",
+        "z": "08d4dec756874d40",
+        "name": "",
+        "topic": "austral/dash1/interval",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6ec4dcef.913b24",
+        "x": 560,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "6ec4dcef.913b24",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.mqtt-dashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "15",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3341a2231ad3625d",
+        "type": "ui_group",
+        "name": "Device 1",
+        "tab": "9d0055570e3dac25",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a83c3b0ce58eb3cf",
+        "type": "ui_group",
+        "name": "Device 2",
+        "tab": "9d0055570e3dac25",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "9d0055570e3dac25",
+        "type": "ui_tab",
+        "name": "Temperature and Humidity Dashboard - ESP32",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    }
+]

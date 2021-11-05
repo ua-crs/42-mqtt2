@@ -1,15 +1,17 @@
 # 42-mqtt2
 
-State @ October 28 18:15
+Presentacion IoT: ESP32 + MQTT + NodeRed
+*   Realizada en Universidad Austral - ELectrónica
+*   dias 1 y 8 de Noviembre 2021
+*   Presentador: Ing. Eduardo A. Martinez
 
-Template for MQTT projects
-Example with one LED for subscription
-and a DHT sensor for publishing tenmperature and humidity
+Se incluyen los fuentes de ESP32 diagramados para cargar
+y compilar en PlatformIO bajo Visual Studio Code
 
-Also includes hardware for detecting connection
-to mqtt server (using builtin led) and autonumbering
-for up to 4 equal boards
+En el subdirectorio docs, se ebcuentra la documentaciónn
+adicional presentada, como diagramas, ppt y flujos de NodeRed
 
-Added blinking builtin led when a publication is made
+Ver readme.md en el directorio docs
+
 
 

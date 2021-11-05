@@ -1,0 +1,534 @@
+[
+    {
+        "id": "6c783c57e73eb068",
+        "type": "tab",
+        "label": "BA weather",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f4e7d5a121bb3057",
+        "type": "json",
+        "z": "6c783c57e73eb068",
+        "name": "json-temperature",
+        "property": "payload.tempc",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 280,
+        "wires": [
+            [
+                "094a90a89967dc8a"
+            ]
+        ]
+    },
+    {
+        "id": "26ede00ee25eac8e",
+        "type": "json",
+        "z": "6c783c57e73eb068",
+        "name": "json-humidity",
+        "property": "payload.humidity",
+        "action": "",
+        "pretty": false,
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "d65b0e1de53fa207"
+            ]
+        ]
+    },
+    {
+        "id": "094a90a89967dc8a",
+        "type": "function",
+        "z": "6c783c57e73eb068",
+        "name": "ConvTemp",
+        "func": "msg.payload = parseFloat(msg.payload.tempc);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 280,
+        "wires": [
+            [
+                "5fd52e7065f48473",
+                "c62d0cf74c719e82"
+            ]
+        ]
+    },
+    {
+        "id": "d65b0e1de53fa207",
+        "type": "function",
+        "z": "6c783c57e73eb068",
+        "name": "ConvHumidity",
+        "func": "msg.payload = parseFloat(msg.payload.humidity);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 420,
+        "wires": [
+            [
+                "99c6ac986807e847",
+                "662f32e245e83e25"
+            ]
+        ]
+    },
+    {
+        "id": "5fd52e7065f48473",
+        "type": "ui_gauge",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "4f5942a5e1fad3b4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Indicador de temperatura",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "36",
+        "colors": [
+            "#9768ee",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "15",
+        "seg2": "20",
+        "className": "",
+        "x": 950,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c62d0cf74c719e82",
+        "type": "ui_chart",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "4f5942a5e1fad3b4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfica de temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "36",
+        "removeOlder": "12",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#d62728",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99c6ac986807e847",
+        "type": "ui_gauge",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "20ee732a6329def4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Indicador de humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#8d8cee",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "30",
+        "seg2": "60",
+        "className": "",
+        "x": 940,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "662f32e245e83e25",
+        "type": "ui_chart",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "20ee732a6329def4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfica de humedad",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "12",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#aec7e8",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 940,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dbd3493ad2627869",
+        "type": "json",
+        "z": "6c783c57e73eb068",
+        "name": "json-pressure",
+        "property": "payload.pressure",
+        "action": "",
+        "pretty": false,
+        "x": 520,
+        "y": 540,
+        "wires": [
+            [
+                "31661cde78151f1f"
+            ]
+        ]
+    },
+    {
+        "id": "eb751d546ed0df4c",
+        "type": "ui_chart",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "6f7c126c8d38dec5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Gráfica de presión",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "990",
+        "ymax": "1030",
+        "removeOlder": "12",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9896",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2aaab9d17a52f6f",
+        "type": "ui_gauge",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "group": "6f7c126c8d38dec5",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Indicador de presión",
+        "label": "mmHg",
+        "format": "{{value}}",
+        "min": "990",
+        "max": "1030",
+        "colors": [
+            "#7a89f5",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1000",
+        "seg2": "1015",
+        "className": "",
+        "x": 940,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "31661cde78151f1f",
+        "type": "function",
+        "z": "6c783c57e73eb068",
+        "name": "ConvPressure",
+        "func": "msg.payload = parseFloat(msg.payload.pressure);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 540,
+        "wires": [
+            [
+                "c2aaab9d17a52f6f",
+                "eb751d546ed0df4c"
+            ]
+        ]
+    },
+    {
+        "id": "0a57cf65d9082a11",
+        "type": "debug",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "5040ea5dd5739d41",
+        "type": "openweathermap",
+        "z": "6c783c57e73eb068",
+        "name": "Buenos Aires",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Buenos Aires",
+        "country": "Argentina",
+        "language": "es",
+        "x": 290,
+        "y": 280,
+        "wires": [
+            [
+                "f4e7d5a121bb3057",
+                "26ede00ee25eac8e",
+                "dbd3493ad2627869",
+                "0a57cf65d9082a11"
+            ]
+        ]
+    },
+    {
+        "id": "48509e1c9e39e94b",
+        "type": "inject",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "5040ea5dd5739d41",
+                "58991ff804146bab"
+            ]
+        ]
+    },
+    {
+        "id": "8ebd143d7bf83c2d",
+        "type": "ui_led",
+        "z": "6c783c57e73eb068",
+        "order": 2,
+        "group": "8aa5e18530635433",
+        "width": 0,
+        "height": 0,
+        "label": "Input",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#ff0000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#000000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 380,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "58991ff804146bab",
+        "type": "trigger",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "3",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "8ebd143d7bf83c2d",
+                "f8be433ae0316aab"
+            ]
+        ]
+    },
+    {
+        "id": "f8be433ae0316aab",
+        "type": "debug",
+        "z": "6c783c57e73eb068",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4f5942a5e1fad3b4",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "c4da2963e7f7045a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "20ee732a6329def4",
+        "type": "ui_group",
+        "name": "Humedad",
+        "tab": "c4da2963e7f7045a",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f7c126c8d38dec5",
+        "type": "ui_group",
+        "name": "Presión",
+        "tab": "c4da2963e7f7045a",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8aa5e18530635433",
+        "type": "ui_group",
+        "name": "Actions",
+        "tab": "c4da2963e7f7045a",
+        "order": 4,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c4da2963e7f7045a",
+        "type": "ui_tab",
+        "name": "Austral Ingeniería",
+        "icon": "'fa-fire'",
+        "disabled": false,
+        "hidden": false
+    }
+]

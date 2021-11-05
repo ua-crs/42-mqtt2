@@ -1,0 +1,65 @@
+[
+    {
+        "id": "6755a250623fc4ab",
+        "type": "tab",
+        "label": "Hello World",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "869e719bd6fefaa5",
+        "type": "comment",
+        "z": "6755a250623fc4ab",
+        "name": "My first NR flow",
+        "info": "You can add as much info as you like here\nAs the tip below mentions, you can also style\nthe text using Github flavoured Markdown",
+        "x": 230,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "5017d6f8b86dfdb1",
+        "type": "inject",
+        "z": "6755a250623fc4ab",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World - From my first NR flow",
+        "payloadType": "str",
+        "x": 240,
+        "y": 260,
+        "wires": [
+            [
+                "7c16916f1e4f8ca9"
+            ]
+        ]
+    },
+    {
+        "id": "7c16916f1e4f8ca9",
+        "type": "debug",
+        "z": "6755a250623fc4ab",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 260,
+        "wires": []
+    }
+]

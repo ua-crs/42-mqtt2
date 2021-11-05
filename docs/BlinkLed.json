@@ -1,0 +1,67 @@
+[
+    {
+        "id": "c5f7ea419b2b8a7b",
+        "type": "ui_led",
+        "z": "e1dbbc36f28282b6",
+        "order": 1,
+        "group": "8aa5e18530635433",
+        "width": 0,
+        "height": 0,
+        "label": "led",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "green",
+                "valueType": "str"
+            },
+            {
+                "color": "#ff0000",
+                "value": "red",
+                "valueType": "str"
+            },
+            {
+                "color": "#000000",
+                "value": "black",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "8aa5e18530635433",
+        "type": "ui_group",
+        "name": "Actions",
+        "tab": "c4da2963e7f7045a",
+        "order": 4,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c4da2963e7f7045a",
+        "type": "ui_tab",
+        "name": "Austral Ingeniería",
+        "icon": "'fa-fire'",
+        "disabled": false,
+        "hidden": false
+    }
+]
