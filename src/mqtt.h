@@ -14,7 +14,7 @@ typedef struct
     void (*action)( char *message );
 } subsc_t;
 
-//  topics: array of topic_t structures subscribed
+//  topics: external public array of topic_t structures subscribed
 extern const subsc_t topics[];
 
 //  init_mqtt: connection to an MQTT server

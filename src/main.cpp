@@ -1,19 +1,31 @@
 /*
- *  Project 41-mqtt2 - main.cpp
+ *  Project 42-mqtt2 - main.cpp
  */
+
+// System includes
 
 #include <Arduino.h>
 
+// Project includes
+
 #include "wifi_ruts.h"
-#include "hard.h"   //  Hardware dependent code
+#include "hard.h"
 #include "mqtt.h"
 #include "base_hard.h"
 #include "interval.h"
 
+// Static variables
+
 static unsigned long previous_millis;
 
+// Static functions
 
-void
+/*
+ *  visualize changes:
+ *      blinks main led when an input chage is detectes
+ */
+
+static void
 visualize_changes(void)
 {
     if( !in_hard_error() )
@@ -22,7 +34,13 @@ visualize_changes(void)
         delay(100);
         click_base_led();
     }
- }
+}
+
+/*
+ *  Public functions
+ */
+
+//  Arduino setup()
 
 void
 setup(void)
@@ -37,6 +55,8 @@ setup(void)
     init_mqtt();
 }
 
+//  Arduino loop
+
 void
 loop(void)
 {   
@@ -48,6 +68,6 @@ loop(void)
         previous_millis = current_millis;
         verify_changes();
         visualize_changes();
-   }
+    }
     mqtt_comms();
 }

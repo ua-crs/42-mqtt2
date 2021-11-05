@@ -3,6 +3,8 @@
  *      Module to deal with MQTT communications
  */
 
+//  System includes
+
 #include <Arduino.h>
 
 //  Library related includes
@@ -26,15 +28,17 @@
 WiFiClient espClient;
 PubSubClient client(espClient);
 
+//  static variables
+
 static char client_name[20];
 
 /*
  *  Private functions
  */
 
-//  callback: called when news from a subscribed topic
+//  callback(): asynchronous function called when news from a subscribed topic
 
-void
+static void
 callback(char *topic, byte *payload, unsigned int length)
 {
     payload[length] = 0;
@@ -48,7 +52,9 @@ callback(char *topic, byte *payload, unsigned int length)
     Serial.println("-----------------------");
 }
 
-void
+//  do_connect(): called to connect or reconnect to MQTT broker
+
+static void
 do_connect(void)
 {
     dim_base_led();

@@ -4,15 +4,24 @@
 /*
  *  led.h
  *      led management
+ *      for base and added hardware
  */
+
+//  init_led(): init led hardware for gpio number
 
 void init_led(int gpio_led);
 
-void init_all_leds(void);
+
+/*
+ *  set_led():
+ *      sets, clears or toggle led connected to gpio number
+ *      according to msg.
+ *      If msg == NULL, changes led state
+ *      else if msg is "0", clears led, else lit led
+ */
 
 void set_led(int gpio_led, const char *msg);
 
-void change_action_led( char *msg );
 
 #endif
 
