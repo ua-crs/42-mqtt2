@@ -14,8 +14,8 @@
         "property": "payload.tempc",
         "action": "",
         "pretty": false,
-        "x": 510,
-        "y": 280,
+        "x": 530,
+        "y": 220,
         "wires": [
             [
                 "094a90a89967dc8a"
@@ -30,8 +30,8 @@
         "property": "payload.humidity",
         "action": "",
         "pretty": false,
-        "x": 490,
-        "y": 420,
+        "x": 570,
+        "y": 360,
         "wires": [
             [
                 "d65b0e1de53fa207"
@@ -228,8 +228,8 @@
         "property": "payload.pressure",
         "action": "",
         "pretty": false,
-        "x": 520,
-        "y": 540,
+        "x": 560,
+        "y": 460,
         "wires": [
             [
                 "31661cde78151f1f"
@@ -340,22 +340,22 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 660,
+        "x": 450,
+        "y": 580,
         "wires": []
     },
     {
         "id": "5040ea5dd5739d41",
         "type": "openweathermap",
         "z": "6c783c57e73eb068",
-        "name": "Buenos Aires",
+        "name": "Eduardo Alberto Martínez",
         "wtype": "current",
         "lon": "",
         "lat": "",
         "city": "Buenos Aires",
         "country": "Argentina",
         "language": "es",
-        "x": 290,
+        "x": 310,
         "y": 280,
         "wires": [
             [
@@ -380,7 +380,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "300",
+        "repeat": "30",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
